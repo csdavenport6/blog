@@ -39,7 +39,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-8">
-        <article className="prose prose-lg max-w-none">
+        <article className="blog-content max-w-none">
           <MDXRemote source={post.content} />
         </article>
       </main>
