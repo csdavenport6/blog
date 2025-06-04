@@ -1,0 +1,45 @@
+---
+title: "Building with Next.js and WASM"
+date: "2025-01-05"
+excerpt: "Exploring how to integrate WebAssembly modules with Next.js for high-performance web applications."
+---
+
+# Building with Next.js and WASM
+
+Today I want to share my experience integrating WebAssembly (WASM) with Next.js. This combination opens up exciting possibilities for high-performance web applications.
+
+## Why WebAssembly?
+
+WebAssembly allows you to run code written in languages like Rust, C++, or Go directly in the browser at near-native speeds. This is perfect for:
+
+- **Computational tasks** - Image processing, data analysis
+- **Game engines** - Physics simulations, rendering
+- **Legacy code** - Porting existing C/C++ libraries
+
+## Setting Up WASM in Next.js
+
+Here's a simple Rust function compiled to WASM:
+
+```rust
+use wasm_bindgen::prelude::*;
+
+#[wasm_bindgen]
+pub fn fibonacci(n: u32) -> u32 {
+    match n {
+        0 => 0,
+        1 => 1,
+        _ => fibonacci(n - 1) + fibonacci(n - 2),
+    }
+}
+```
+
+The integration with Next.js is surprisingly smooth, and you can check out the `/wasm` page on this site to see it in action!
+
+## Next Steps
+
+I'm planning to explore more complex WASM use cases, including:
+- Image manipulation tools
+- Real-time data processing
+- Interactive visualizations
+
+Stay tuned for more updates!
